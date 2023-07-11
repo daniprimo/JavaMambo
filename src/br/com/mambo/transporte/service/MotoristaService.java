@@ -20,13 +20,12 @@ public class MotoristaService implements MotoristaDAO {
 
 	@Override
 	public Motorista buscarPorNome(String name) {
-		return null;
+		return arquivo.findByName(name);
 	}
 
 	@Override
 	public List<Motorista> buscarTodos() {
-		// TODO Auto-generated method stub
-		return null;
+		return arquivo.findAll();
 	}
 	
 	private void validarCamposDoMotorista(Motorista motorista) {

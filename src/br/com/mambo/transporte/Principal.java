@@ -13,5 +13,9 @@ public class Principal {
 		System.out.println(dao.addMotorista(motorista));
 		System.out.println(dao.addMotorista(motorista2));
 		
+		System.out.println(dao.buscarPorNome("Valderim"));
+		System.out.println("--------");
+		System.out.println(dao.buscarTodos());
+		
 	}
 }

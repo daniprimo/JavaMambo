@@ -44,7 +44,7 @@ public class Motorista {
 
 	@Override
 	public String toString() {
-		return "Motorista [id= " + id + ", nome=" + nome + ", nomeCompleto=" + nomeCompleto + ", telefone=" + telefone
+		return "\nMotorista [id= " + id + ", nome=" + nome + ", nomeCompleto=" + nomeCompleto + ", telefone=" + telefone
 				+ "]";
 	}
 

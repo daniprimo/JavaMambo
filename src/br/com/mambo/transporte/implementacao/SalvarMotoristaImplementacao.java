@@ -10,7 +10,7 @@ import br.com.mambo.transporte.repository.MotoristaRepository;
 
 public class SalvarMotoristaImplementacao implements MotoristaRepository{
 
-	private List<Motorista> discoArmazenamento = new ArrayList<>();
+	private static List<Motorista> discoArmazenamento = new ArrayList<>();
 	
 	@Override
 	public Motorista save(Motorista salvarNovoMotorista) {
@@ -21,18 +21,17 @@ public class SalvarMotoristaImplementacao implements MotoristaRepository{
 
 	@Override
 	public Motorista findByName(String nome) {
-		return retornaMotoristaComNome(nome);
+		return retornaMotoristaPorNome(nome);
 		
 	}
 
 	@Override
-	public Motorista findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Motorista> findAll() {
+		return discoArmazenamento;
 	}
 	
 	
-	private Motorista retornaMotoristaComNome(String nome) {
+	private Motorista retornaMotoristaPorNome(String nome) {
 		try {
 			return buscandoNoArquivoPorNome(nome);
 		} catch (final Exception e) {
