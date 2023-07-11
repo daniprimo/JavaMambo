@@ -1,21 +1,34 @@
 package br.com.mambo.transporte.service;
 
+import java.util.List;
+
 import br.com.mambo.transporte.dao.MotoristaDAO;
 import br.com.mambo.transporte.implementacao.SalvarMotoristaImplementacao;
 import br.com.mambo.transporte.model.Motorista;
-import br.com.mambo.transporte.repository.SalvarNoArquivo;
+import br.com.mambo.transporte.repository.MotoristaRepository;
 
 public class MotoristaService implements MotoristaDAO {
 
-	private SalvarNoArquivo arquivo;
+	private MotoristaRepository arquivo;
 
 	@Override
 	public Motorista addMotorista(Motorista motorista) {
 		arquivo = new SalvarMotoristaImplementacao();
 		validarCamposDoMotorista(motorista);
-		return arquivo.salvar(motorista.salvarNovoMotorista());
+		return arquivo.save(motorista.salvarNovoMotorista());
 	}
 
+	@Override
+	public Motorista buscarPorNome(String name) {
+		return null;
+	}
+
+	@Override
+	public List<Motorista> buscarTodos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	private void validarCamposDoMotorista(Motorista motorista) {
 		try {
 			verificandoSeOsCamposEstaoNulos(motorista);
@@ -34,7 +47,6 @@ public class MotoristaService implements MotoristaDAO {
 		} 
 
 	}
-	
 
 	
 		
